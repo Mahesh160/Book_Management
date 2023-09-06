@@ -1,0 +1,76 @@
+package com.bookmanagement;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Login_User_Servlet
+ */
+@WebServlet("/Login_User_Servlet")
+public class Login_User_Servlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login_User_Servlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		 	String sname = request.getParameter("username");
+	        String semail = request.getParameter("email_id");
+	        String spwd = request.getParameter("password");
+
+	        
+	        try {
+	        	Connection con=DBConnect.dbConnect();
+	        	String sql="Insert into user_register(seller_name ,seller_email ,seller_pwd )values(?,?,?)";
+	        	PreparedStatement pt=con.prepareStatement(sql);
+	        	
+	        	pt.setString(1, sname);
+	        	pt.setString(2, semail);
+	        	pt.setString(3, spwd);
+	        	
+	        	int result=pt.executeUpdate();
+	        	if(result>0) {
+	        		System.out.println("inserted successfully");
+	        	}
+	        	else {
+	        		System.out.println("not inserted");
+	        	}
+	        	
+	        	pt.close();
+	        	con.close();
+	        }
+	        catch(SQLException e){
+	        	e.printStackTrace();
+	        	
+	        }catch(Exception e) {
+	        	e.printStackTrace();
+	        }
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.bookmanagement;
+
+import java.sql.*;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class DBConnect {
+	
+	public static Statement dbConnect() throws Exception {
+		
+		
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/manhattan","root","rootPassword"); // Step-2. Creating Connection
+            Statement stmt= con.createStatement(); 
+            return stmt;
+	}
+}

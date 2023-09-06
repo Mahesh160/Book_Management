@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+D:\Book_Management\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\819355451.index
+\BookManagement\src\main\java
+D:\Book_Management\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3180541628.index
+\BookStoreApp\src\main\resources
+D:\Book_Management\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4018252040.index
+\BookManagement\src\main\java
+D:\Book_Management\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1213573228.index
+\BookManagement\src\main\java
+D:\Book_Management\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\739792336.index
+\BookManagement\src\main\java
